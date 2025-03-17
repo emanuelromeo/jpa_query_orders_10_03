@@ -1,11 +1,12 @@
 package com.crud.jpa_query_orders_10_03.entity;
 
+import com.crud.jpa_query_orders_10_03.entity.abstracts.AuditableEntity;
 import com.crud.jpa_query_orders_10_03.enumeration.ProductCategory;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "products")
-public class Product {
+public class Product extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +25,7 @@ public class Product {
     @Column(name = "deleted")
     private Boolean deleted = false;
 
+
     public Product() {
     }
 
@@ -33,6 +35,7 @@ public class Product {
         this.category = category;
         this.price = price;
     }
+
 
     public Long getId() {
         return id;

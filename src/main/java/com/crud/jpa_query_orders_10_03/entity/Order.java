@@ -1,5 +1,6 @@
 package com.crud.jpa_query_orders_10_03.entity;
 
+import com.crud.jpa_query_orders_10_03.entity.abstracts.AuditableEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
@@ -8,7 +9,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Order extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

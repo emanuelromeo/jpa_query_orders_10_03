@@ -1,11 +1,12 @@
 package com.crud.jpa_query_orders_10_03.entity;
 
+import com.crud.jpa_query_orders_10_03.entity.abstracts.AuditableEntity;
 import com.crud.jpa_query_orders_10_03.enumeration.EmployeeDepartment;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "employees")
-public class Employee {
+public class Employee extends AuditableEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
